@@ -10,8 +10,13 @@ pipeline {
 
         stage('Setup Python') {
             steps {
-                sh 'python3 -m pip install --upgrade pip'
-                sh 'pip install -r requirements.txt'
+                sh '''
+                    python3 --version
+                    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+                    python3 get-pip.py
+                    python3 -m pip install --upgrade pip
+                    pip install -r requirements.txt
+                '''
             }
         }
 
