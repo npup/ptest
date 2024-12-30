@@ -14,8 +14,6 @@ pipeline {
                     python3 --version
                     python3 -m venv .venv
                     . .venv/bin/activate
-                    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-                    python3 get-pip.py
                     python3 -m pip install --upgrade pip
                     pip install -r requirements.txt
                 '''
