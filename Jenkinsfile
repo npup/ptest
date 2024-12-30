@@ -24,7 +24,7 @@ pipeline {
 
         stage('Code Format Check') {
             steps {
-                sh 'black --check .'
+                sh '. .venv/bin/activate && black --check .'
             }
         }
 
